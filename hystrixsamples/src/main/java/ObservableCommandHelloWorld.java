@@ -4,6 +4,19 @@ import rx.Observable;
 import rx.Subscriber;
 import rx.schedulers.Schedulers;
 
+/**
+ * Call HystrixCommand by executing the queue() method:
+ *
+ * <code>
+ *     Future<String> fs = new CommandHelloWorld("World").queue();
+ * </code>
+ *
+ * <code>
+ *     String s = fs.get();
+ * </code>
+ *
+ * @author saldivar
+ */
 public class ObservableCommandHelloWorld extends HystrixObservableCommand<String> {
 
     private final String name;
