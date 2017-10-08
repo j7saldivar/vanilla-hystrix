@@ -7,6 +7,14 @@ import com.netflix.hystrix.HystrixCommandGroupKey;
  *     String s = new CommandHelloWorld("World").execute();
  * </code>
  *
+ * Call HystrixCommand by executing the queue() method:
+ *
+ * <code>
+ *     Future<String> fs = new CommandHelloWorld("World").queue();
+ *     String s = fs.get();
+ * </code>
+ *
+ *
  * @author saldivar
  */
 public class CommandHelloWorld extends HystrixCommand<String> {
